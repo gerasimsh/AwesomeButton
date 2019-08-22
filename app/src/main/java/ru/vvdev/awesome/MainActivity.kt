@@ -13,7 +13,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         button = findViewById(R.id.awesome)
-        button.setText("Здарова")
         button.setBackground("#E5E500")
     }
 }

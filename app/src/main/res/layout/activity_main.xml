@@ -1,15 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="ru.vvdev.awesome.MainActivity">
-    <ru.vvdev.awesomebutton.AwesomeButton
-        android:layout_width="match_parent"
-        app:background_view="@color/colorAccent"
-        app:text_view="Привет!"
-        android:id="@+id/awesome"
-        android:layout_height="wrap_content"/>
 
-</RelativeLayout>
+    <ru.vvdev.awesomebutton.AwesomeButton
+        android:orientation="vertical"
+        android:id="@+id/awesome"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        app:background_view="@color/colorAccent"
+        app:text_view="hgj!" />
+
+    <ru.vvdev.awesomebutton.AwesomeButton
+        android:id="@+id/awesome2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:background_view="@color/colorPrimary"
+        app:text_view="Ну привет" />
+
+</LinearLayout>

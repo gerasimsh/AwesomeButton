@@ -2,6 +2,7 @@ package ru.vvdev.awesomebutton
 
 import android.content.Context
 import android.graphics.Color
+import android.support.annotation.Dimension
 import android.support.v7.widget.CardView
 import android.util.AttributeSet
 import android.view.LayoutInflater
@@ -104,7 +105,7 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
         textView.text = text
     }
 
-    fun setBackground(color: Int) {
+    private fun setBackground(color: Int) {
         buttonView.setCardBackgroundColor(color)
         secondView.setCardBackgroundColor(color)
         firstView.setCardBackgroundColor(color)

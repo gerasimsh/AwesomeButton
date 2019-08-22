@@ -6,5 +6,6 @@
         <attr name="background_third_view" format="reference|color" />
         <attr name="background_second_view" format="reference|color" />
         <attr name="text_view" format="reference|string" />
+        <attr name="corner_radius" format="reference|dimension" />
     </declare-styleable>
 </resources>
