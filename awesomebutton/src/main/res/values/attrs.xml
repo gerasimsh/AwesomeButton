@@ -7,5 +7,7 @@
         <attr name="background_second_view" format="reference|color" />
         <attr name="text_view" format="reference|string" />
         <attr name="corner_radius" format="reference|dimension" />
+        <attr name="text_size" format="reference|dimension" />
+        <attr name="text_color" format="reference|color" />
     </declare-styleable>
 </resources>

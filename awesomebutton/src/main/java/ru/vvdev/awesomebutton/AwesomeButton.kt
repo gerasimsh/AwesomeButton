@@ -1,5 +1,6 @@
 package ru.vvdev.awesomebutton
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Color
 import android.support.annotation.Dimension
@@ -29,6 +30,8 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
     internal var backColor2: Int = 0
     internal var backColor3: Int = 0
     internal var text: String? = null
+    internal var textSize: Float? = null
+    internal var textColor: Int = 0xFFFFFF
 
     init {
         init(attrs)
@@ -61,6 +64,7 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
 
     }
 
+    @SuppressLint("CustomViewStyleable", "Recycle")
     private fun setStyle(attrs: AttributeSet) {
         val arr = context.obtainStyledAttributes(attrs, R.styleable.awesome_button)
         backColor = arr.getColor(R.styleable.awesome_button_background_view, resources.getColor(R.color.colorPrimary))
@@ -75,12 +79,17 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
             backColor3 = backColor
 
         text = arr.getString(R.styleable.awesome_button_text_view)
+        textColor = arr.getColor(R.styleable.awesome_button_text_color, resources.getColor(R.color.colorPrimary))
+        textSize = arr.getDimension(R.styleable.awesome_button_text_size, 32F)
+
         buttonView.setCardBackgroundColor(backColor)
         secondView.setCardBackgroundColor(backColor1)
         firstView.setCardBackgroundColor(backColor2)
         nullView.setCardBackgroundColor(backColor3)
 
         textView.text = text
+        textView.setTextColor(textColor)
+        textView.textSize = textSize as Float
 
 
     }
