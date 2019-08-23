@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.Color
 import android.support.annotation.Dimension
 import android.support.v7.widget.CardView
+import android.text.TextUtils
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.MotionEvent
@@ -29,9 +30,15 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
     internal var backColor1: Int = 0
     internal var backColor2: Int = 0
     internal var backColor3: Int = 0
+    internal var cornerRadius: Float = 0F
+
+
+    //textView
     internal var text: String? = null
     internal var textSize: Float? = null
     internal var textColor: Int = 0xFFFFFF
+    internal var maxLines: Int = 1
+
 
     init {
         init(attrs)
@@ -77,10 +84,11 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
             backColor2 = backColor
         if (backColor3 == resources.getColor(R.color.colorPrimary))
             backColor3 = backColor
-
+        cornerRadius = arr.getDimension(R.styleable.awesome_button_corner_radius, resources.getDimension(R.dimen.defaultCornerRadius))
         text = arr.getString(R.styleable.awesome_button_text_view)
         textColor = arr.getColor(R.styleable.awesome_button_text_color, resources.getColor(R.color.colorPrimary))
         textSize = arr.getDimension(R.styleable.awesome_button_text_size, 32F)
+        maxLines = arr.getInt(R.styleable.awesome_button_maxLines, 3)
 
         buttonView.setCardBackgroundColor(backColor)
         secondView.setCardBackgroundColor(backColor1)
@@ -90,7 +98,10 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
         textView.text = text
         textView.setTextColor(textColor)
         textView.textSize = textSize as Float
+        textView.maxLines = maxLines
+        textView.ellipsize = TextUtils.TruncateAt.END
 
+        setCornerRadius(cornerRadius)
 
     }
 
@@ -98,6 +109,16 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
         nullView.animate().alpha(0.0f).setDuration(50).start()
         secondView.animate().alpha(0.0f).setDuration(200).start()
         firstView.animate().alpha(0.0f).setDuration(100).start()
+    }
+
+    fun setCornerRadius(radius: Float) {
+        val step = resources.getDimension(R.dimen.defaultCornerRadiusStep)
+        buttonView.radius = radius
+        secondView.radius = radius + 1 * step
+        firstView.radius = radius + 2 * step
+        nullView.radius = radius + 3 * step
+
+
     }
 
     fun animateDown() {

@@ -25,6 +25,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:background_view="@android:color/black"
+        app:corner_radius="400dp"
+        app:maxLines="1"
         app:text_size="32sp"
         app:text_view="Ну привет" />
 
