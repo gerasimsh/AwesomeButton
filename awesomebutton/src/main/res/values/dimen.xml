@@ -2,5 +2,6 @@
 <resources>
     <dimen name="defaultCornerRadius">20dp</dimen>
     <dimen name="defaultCornerRadiusStep">5dp</dimen>
+    <dimen name="defaultTextSize">12sp</dimen>
 
 </resources>

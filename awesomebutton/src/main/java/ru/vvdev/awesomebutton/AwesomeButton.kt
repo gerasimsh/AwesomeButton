@@ -71,7 +71,6 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
 
     }
 
-    @SuppressLint("CustomViewStyleable", "Recycle")
     private fun setStyle(attrs: AttributeSet) {
         val arr = context.obtainStyledAttributes(attrs, R.styleable.awesome_button)
         backColor = arr.getColor(R.styleable.awesome_button_background_view, resources.getColor(R.color.colorPrimary))
@@ -85,9 +84,11 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
         if (backColor3 == resources.getColor(R.color.colorPrimary))
             backColor3 = backColor
         cornerRadius = arr.getDimension(R.styleable.awesome_button_corner_radius, resources.getDimension(R.dimen.defaultCornerRadius))
+        setCornerRadius(cornerRadius)
+
         text = arr.getString(R.styleable.awesome_button_text_view)
-        textColor = arr.getColor(R.styleable.awesome_button_text_color, resources.getColor(R.color.colorPrimary))
-        textSize = arr.getDimension(R.styleable.awesome_button_text_size, 32F)
+        textColor = arr.getColor(R.styleable.awesome_button_text_color, resources.getColor(R.color.white))
+        textSize = arr.getDimension(R.styleable.awesome_button_text_size, resources.getDimension(R.dimen.defaultTextSize))
         maxLines = arr.getInt(R.styleable.awesome_button_maxLines, 3)
 
         buttonView.setCardBackgroundColor(backColor)
@@ -101,7 +102,6 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
         textView.maxLines = maxLines
         textView.ellipsize = TextUtils.TruncateAt.END
 
-        setCornerRadius(cornerRadius)
 
     }
 
