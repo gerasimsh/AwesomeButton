@@ -86,7 +86,8 @@ class AwesomeButton(context: Context, attrs: AttributeSet) : LinearLayout(contex
         cornerRadius = arr.getDimension(R.styleable.awesome_button_corner_radius, resources.getDimension(R.dimen.defaultCornerRadius))
         setCornerRadius(cornerRadius)
 
-        text = arr.getString(R.styleable.awesome_button_text_view)
+        text = arr.getString(R.styleable.awesome_button_text
+        )
         textColor = arr.getColor(R.styleable.awesome_button_text_color, resources.getColor(R.color.white))
         textSize = arr.getDimension(R.styleable.awesome_button_text_size, resources.getDimension(R.dimen.defaultTextSize))
         maxLines = arr.getInt(R.styleable.awesome_button_maxLines, 3)

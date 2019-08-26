@@ -9,15 +9,16 @@
 
     <ru.vvdev.awesomebutton.AwesomeButton
         android:id="@+id/awesome"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:layout_marginRight="32dp"
         android:orientation="vertical"
-        app:background_view="@color/colorAccent"
-        app:text_color="@android:color/black"
-        app:text_view="hgj!" />
+        app:background_view="@color/color_green"
+        app:text="ВОЛГА\nВОЛГА"
+        app:text_color="@android:color/white"
+        app:text_size="9sp" />
 
     <ru.vvdev.awesomebutton.AwesomeButton
 
@@ -27,8 +28,9 @@
         app:background_view="@android:color/black"
         app:corner_radius="1dp"
         app:maxLines="1"
-        app:text_size="6sp"
-        app:text_view="Ну привет Ну приветНу приветНу приветНу приветНу приветНу приветНу привет" />
+        app:text="VVDev"
+        app:text_color="@color/colorPrimary"
+        app:text_size="6sp" />
 
     <ru.vvdev.awesomebutton.AwesomeButton
 
@@ -37,7 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:maxLines="1"
-        app:text_size="10sp"
-        app:text_view="Hi" />
+        app:text="Hi"
+        app:text_size="10sp" />
 
 </LinearLayout>
